@@ -1,0 +1,229 @@
+/*
+  Design tokens.
+  Light is the default. Dark applies when the OS prefers it, unless the user
+  chose light with the toggle; data-theme="dark" on <html> forces dark.
+  Components read these variables only; never write a hex value in a component.
+*/
+
+:root {
+  color-scheme: light;
+
+  /* Brand */
+  --color-primary: #0171c4;
+  --color-primary-hover: #01599c;
+  --color-primary-active: #014276;
+  --color-primary-light: #e7f5ff;
+  --color-primary-light-border: #a5d8ff;
+  --color-primary-light-active: #dbe9f3;
+  --color-on-primary: #ffffff;
+
+  /* Status */
+  --color-success: #007f5b;
+  --color-success-light: #e6fcf5;
+  --color-success-text: #087f5b;
+  --color-danger: #dd353b;
+  --color-danger-hover: #c10b23;
+  --color-danger-active: #9c0219;
+  --color-danger-light: #fff5f5;
+  --color-danger-light-active: #f8eeee;
+  --color-danger-text: #da2a2c;
+  --color-mark: #ffec99;
+
+  /* Text */
+  --color-text: #212529;
+  --color-text-subtle: #495057;
+  --color-text-muted: #697078;
+
+  /* Borders */
+  --color-border: #dee2e6;
+  --color-border-light: #edeff1;
+  --color-border-control: #8e9195;
+
+  /* Grounds */
+  --color-surface: #ffffff;
+  --color-bg: #f8f9fa;
+  --color-bg-subtle: #f1f3f5;
+  --color-row-hover: #f8f9fa;
+  --color-bg-active: #e5e7e9;
+  --color-code-bg: #f8f9fa;
+  --color-overlay: rgba(16, 24, 40, 0.45);
+
+  /* Lightbox */
+  --color-lightbox-bg: rgba(10, 12, 16, 0.95);
+  --color-lightbox-control: rgba(255, 255, 255, 0.12);
+  --color-lightbox-control-hover: rgba(255, 255, 255, 0.22);
+  --color-lightbox-text: #ffffff;
+  --color-lightbox-text-muted: rgba(255, 255, 255, 0.72);
+  --color-lightbox-thumb-active: #4dabf7;
+  --color-lightbox-image-bg: #ffffff;
+  --color-zoom-chip: rgba(16, 24, 40, 0.6);
+
+  /* Tags: one pair per controlled tag */
+  --tag-blue-bg: #e7f5ff;
+  --tag-blue-fg: #1971c2;
+  --tag-teal-bg: #e6fcf5;
+  --tag-teal-fg: #087f5b;
+  --tag-grape-bg: #f8f0fc;
+  --tag-grape-fg: #9c36b5;
+  --tag-orange-bg: #fff4e6;
+  --tag-orange-fg: #cc3f01;
+  --tag-indigo-bg: #edf2ff;
+  --tag-indigo-fg: #3b5bdb;
+  --tag-cyan-bg: #e3fafc;
+  --tag-cyan-fg: #027c90;
+  --tag-gray-bg: #f1f3f5;
+  --tag-gray-fg: #495057;
+
+  /* Syntax colours, code only */
+  --syn-keyword: #9c36b5;
+  --syn-string: #087f5b;
+  --syn-comment: #6c747c;
+  --syn-fn: #1971c2;
+  --syn-number: #cf4000;
+  --syn-prop: #3b5bdb;
+
+  --shadow-focus-input: 0 0 0 3px #e7f5ff;
+}
+
+/* Dark, following the OS unless the user chose light */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --color-primary: #4dabf7;
+    --color-primary-hover: #74c0fc;
+    --color-primary-active: #4b97d1;
+    --color-primary-light: rgba(34, 139, 230, 0.16);
+    --color-primary-light-border: rgba(77, 171, 247, 0.35);
+    --color-primary-light-active: #1b2c3e;
+    --color-on-primary: #1a1b1e;
+    --color-success: #63e6be;
+    --color-success-light: rgba(18, 184, 134, 0.14);
+    --color-success-text: #63e6be;
+    --color-danger: #fa5252;
+    --color-danger-hover: #ff6b6b;
+    --color-danger-active: #e25053;
+    --color-danger-light: rgba(250, 82, 82, 0.12);
+    --color-danger-light-active: #28151a;
+    --color-danger-text: #ff8787;
+    --color-mark: rgba(250, 176, 5, 0.35);
+    --color-text: #e9ecef;
+    --color-text-subtle: #ced4da;
+    --color-text-muted: #939599;
+    --color-border: #373a40;
+    --color-border-light: #2c2e33;
+    --color-border-control: #6c6f76;
+    --color-surface: #25262b;
+    --color-bg: #1a1b1e;
+    --color-bg-subtle: #2c2e33;
+    --color-row-hover: #2c2e33;
+    --color-bg-active: #1d1f23;
+    --color-code-bg: #1f2023;
+    --tag-blue-bg: rgba(34, 139, 230, 0.16);
+    --tag-blue-fg: #74c0fc;
+    --tag-teal-bg: rgba(18, 184, 134, 0.16);
+    --tag-teal-fg: #63e6be;
+    --tag-grape-bg: rgba(190, 75, 219, 0.16);
+    --tag-grape-fg: #e599f7;
+    --tag-orange-bg: rgba(253, 126, 20, 0.16);
+    --tag-orange-fg: #ffa94d;
+    --tag-indigo-bg: rgba(76, 110, 245, 0.16);
+    --tag-indigo-fg: #91a7ff;
+    --tag-cyan-bg: rgba(21, 170, 191, 0.16);
+    --tag-cyan-fg: #66d9e8;
+    --tag-gray-bg: rgba(134, 142, 150, 0.12);
+    --tag-gray-fg: #ced4da;
+    --syn-keyword: #e599f7;
+    --syn-string: #63e6be;
+    --syn-comment: #909296;
+    --syn-fn: #74c0fc;
+    --syn-number: #ffa94d;
+    --syn-prop: #91a7ff;
+    --shadow-focus-input: 0 0 0 3px rgba(34, 139, 230, 0.16);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-primary: #4dabf7;
+  --color-primary-hover: #74c0fc;
+  --color-primary-active: #4b97d1;
+  --color-primary-light: rgba(34, 139, 230, 0.16);
+  --color-primary-light-border: rgba(77, 171, 247, 0.35);
+  --color-primary-light-active: #1b2c3e;
+  --color-on-primary: #1a1b1e;
+  --color-success: #63e6be;
+  --color-success-light: rgba(18, 184, 134, 0.14);
+  --color-success-text: #63e6be;
+  --color-danger: #fa5252;
+  --color-danger-hover: #ff6b6b;
+  --color-danger-active: #e25053;
+  --color-danger-light: rgba(250, 82, 82, 0.12);
+  --color-danger-light-active: #28151a;
+  --color-danger-text: #ff8787;
+  --color-mark: rgba(250, 176, 5, 0.35);
+  --color-text: #e9ecef;
+  --color-text-subtle: #ced4da;
+  --color-text-muted: #939599;
+  --color-border: #373a40;
+  --color-border-light: #2c2e33;
+  --color-border-control: #6c6f76;
+  --color-surface: #25262b;
+  --color-bg: #1a1b1e;
+  --color-bg-subtle: #2c2e33;
+  --color-row-hover: #2c2e33;
+  --color-bg-active: #1d1f23;
+  --color-code-bg: #1f2023;
+  --tag-blue-bg: rgba(34, 139, 230, 0.16);
+  --tag-blue-fg: #74c0fc;
+  --tag-teal-bg: rgba(18, 184, 134, 0.16);
+  --tag-teal-fg: #63e6be;
+  --tag-grape-bg: rgba(190, 75, 219, 0.16);
+  --tag-grape-fg: #e599f7;
+  --tag-orange-bg: rgba(253, 126, 20, 0.16);
+  --tag-orange-fg: #ffa94d;
+  --tag-indigo-bg: rgba(76, 110, 245, 0.16);
+  --tag-indigo-fg: #91a7ff;
+  --tag-cyan-bg: rgba(21, 170, 191, 0.16);
+  --tag-cyan-fg: #66d9e8;
+  --tag-gray-bg: rgba(134, 142, 150, 0.12);
+  --tag-gray-fg: #ced4da;
+  --syn-keyword: #e599f7;
+  --syn-string: #63e6be;
+  --syn-comment: #909296;
+  --syn-fn: #74c0fc;
+  --syn-number: #ffa94d;
+  --syn-prop: #91a7ff;
+  --shadow-focus-input: 0 0 0 3px rgba(34, 139, 230, 0.16);
+}
+
+/* Not themed */
+:root {
+  --font-sans: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  --shadow-drawer: -8px 0 32px rgba(16, 24, 40, 0.12);
+  --shadow-modal: 0 12px 40px rgba(16, 24, 40, 0.18);
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-full: 999px;
+
+  --page-max: 1120px;
+  --topbar-height: 64px;
+  --drawer-width: 600px;
+  --modal-width: 440px;
+  --input-height: 40px;
+  --button-height: 40px;
+  --drawer-foot-height: 69px;
+
+  --z-topbar: 20;
+  --z-toast-dock: 30;
+  --z-overlay: 40;
+  --z-drawer: 41;
+  --z-toast-drawer: 42;
+  --z-modal: 50;
+  --z-lightbox: 60;
+}
