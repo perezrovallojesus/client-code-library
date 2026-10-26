@@ -166,6 +166,10 @@
 [role="listbox"]:focus-visible { outline: none; }
 [role="listbox"]:focus-visible .is-active { outline: 2px solid var(--color-primary); outline-offset: -2px; }
 
+/* Anchors a menu to its trigger (user menu, logbook options). */
+.menu-wrap { position: relative; }
+.menu-popup { position: absolute; top: calc(100% + 4px); right: 0; z-index: var(--z-overlay); }
+
 .select-wrap { position: relative; display: inline-block; vertical-align: top; }
 .select {
   display: inline-flex; align-items: center; gap: 8px; height: var(--input-height);
@@ -199,6 +203,7 @@
 .tf-option:hover .checkbox-box { border-color: var(--color-primary); }
 .tf-option[aria-selected="true"] .checkbox-box { background: var(--color-primary); border-color: var(--color-primary); }
 .tf-option[aria-selected="true"] .checkbox-box svg { visibility: visible; }
+.tf-empty { padding: 8px 12px; font-size: 13px; color: var(--color-text-muted); }
 .tf-foot { display: flex; justify-content: flex-end; margin-top: 4px; padding: 4px 4px 0; border-top: 1px solid var(--color-border-light); }
 .checkbox-box {
   width: 16px; height: 16px; flex-shrink: 0;
@@ -448,6 +453,7 @@ pre.code-body {
 .drawer-head h3 { margin: 0; font-size: 18px; font-weight: 700; }
 .drawer-head .doc-label { display: flex; align-items: center; gap: 5px; margin-bottom: 2px; font-size: 12px; font-weight: 600; color: var(--color-text-muted); }
 .drawer-head .doc-label svg { width: 13px; height: 13px; }
+.drawer-form { flex: 1; min-height: 0; display: flex; flex-direction: column; }
 .drawer-body { flex: 1; overflow-y: auto; padding: 24px 24px 12px; }
 .drawer-required-note { margin: 0 0 16px; font-size: 12.5px; color: var(--color-text-muted); }
 .drawer-foot {
@@ -512,8 +518,10 @@ pre.code-body {
 }
 .dropzone.is-over .dz-icon { background: var(--color-surface); }
 .dropzone .dz-icon svg { width: 20px; height: 20px; }
+.dropzone { width: 100%; font: inherit; color: inherit; text-align: left; }
+.dropzone .dz-text, .dropzone .dz-title, .dropzone .dz-sub { display: block; }
 .dropzone .dz-title { font-size: 14px; font-weight: 500; }
-.dropzone .dz-title a { font-weight: 600; color: var(--color-primary); text-decoration: underline; text-underline-offset: 2px; }
+.dropzone .dz-link { font-weight: 600; color: var(--color-primary); text-decoration: underline; text-underline-offset: 2px; }
 .dropzone .dz-sub { margin-top: 2px; font-size: 12px; color: var(--color-text-muted); }
 .dz-error { margin-top: 6px; }
 .upload-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }

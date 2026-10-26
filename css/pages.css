@@ -31,3 +31,5 @@
 .results-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 12px; }
 .results-head h3 { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 15px; font-weight: 700; }
 .lb-results { display: grid; gap: 8px; }
+
+.toolbar form { flex: 1 1 280px; min-width: 220px; max-width: 420px; }

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logbook · Client Code Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Roboto:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="js/boot.js"></script>
+</head>
+<body>
+  <div class="app" id="app">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"><svg data-icon="Code" data-size="18"></svg></span>
+        <span class="brand-text">
+          <span class="brand-name">Client Code Library</span>
+          <span class="brand-org">Shocklogic</span>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <span class="dev-badge dev-only">Dev mode</span>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme">
+          <svg class="icon-sun" data-icon="Sun" data-size="18"></svg>
+          <svg class="icon-moon" data-icon="Moon" data-size="18"></svg>
+        </button>
+        <button type="button" class="dev-login viewer-only" id="dev-login"><svg data-icon="Lock" data-size="15"></svg>Dev login</button>
+        <div class="user-menu dev-only">
+          <button type="button" class="user-btn" id="user-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="user-popup">
+            <span class="avatar" aria-hidden="true" data-user-initials></span>
+            <span class="uname" data-user-name></span>
+            <svg class="chev" data-icon="ChevDown" data-size="14"></svg>
+          </button>
+          <div class="menu user-popup" id="user-popup" role="menu" aria-label="User menu" hidden>
+            <button type="button" class="menu-item" role="menuitem" id="logout"><svg data-icon="Logout"></svg>Log out</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main" id="main">
+      <div class="page" id="logbook-page">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Library</a>
+          <svg data-icon="ChevRight" data-size="14"></svg>
+          <span class="current" aria-current="page" id="crumb"></span>
+        </nav>
+        <section class="content-card" aria-labelledby="logbook-title">
+          <div class="content-header">
+            <div>
+              <h2 id="logbook-title"></h2>
+              <div class="header-meta">
+                <span><svg data-icon="Files" data-size="14"></svg><span id="meta-count"></span></span>
+                <span id="meta-updated"><svg data-icon="Clock" data-size="14"></svg><span></span></span>
+              </div>
+            </div>
+            <div class="header-actions dev-only">
+              <div class="menu-wrap">
+                <button type="button" class="icon-btn" id="options-btn" aria-label="Logbook options" aria-haspopup="menu" aria-expanded="false" aria-controls="options-menu"><svg data-icon="Dots"></svg></button>
+                <div class="menu menu-popup" id="options-menu" role="menu" aria-label="Logbook options" hidden>
+                  <div class="menu-label" role="presentation">Logbook</div>
+                  <button type="button" class="menu-item" role="menuitem"><svg data-icon="Pencil"></svg>Rename logbook</button>
+                  <div class="menu-divider" role="separator"></div>
+                  <button type="button" class="menu-item danger" role="menuitem"><svg data-icon="Trash"></svg>Delete logbook</button>
+                </div>
+              </div>
+              <button type="button" class="btn btn-primary" id="new-entry"><svg data-icon="Plus"></svg>New entry</button>
+            </div>
+          </div>
+          <div class="toolbar" id="toolbar">
+            <form role="search" id="entry-search-form">
+              <div class="search-row">
+                <svg data-icon="Search"></svg>
+                <input type="search" id="entry-search" placeholder="Search entries" aria-label="Search entries" autocomplete="off">
+              </div>
+            </form>
+            <span id="tag-filter-slot"></span>
+            <span id="sort-slot"></span>
+            <span class="spacer"></span>
+            <div class="toolbar-end"><button type="button" class="btn btn-subtle btn-sm" id="expand-all" data-state="closed"></button></div>
+          </div>
+          <div id="entries"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div id="layers"></div>
+  <div class="toast-dock" id="toast-dock" aria-live="polite"></div>
+  <div class="sr-only" id="live-status" aria-live="polite"></div>
+  <script src="js/icons.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/behaviors.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/editor.js"></script>
+  <script src="js/logbook.js"></script>
+</body>
+</html>
