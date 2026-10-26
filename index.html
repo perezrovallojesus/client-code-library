@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library · Client Code Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Roboto:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="js/boot.js"></script>
+</head>
+<body>
+  <div class="app" id="app">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"><svg data-icon="Code" data-size="18"></svg></span>
+        <span class="brand-text">
+          <span class="brand-name">Client Code Library</span>
+          <span class="brand-org">Shocklogic</span>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <span class="dev-badge dev-only">Dev mode</span>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme">
+          <svg class="icon-sun" data-icon="Sun" data-size="18"></svg>
+          <svg class="icon-moon" data-icon="Moon" data-size="18"></svg>
+        </button>
+        <button type="button" class="dev-login viewer-only" id="dev-login"><svg data-icon="Lock" data-size="15"></svg>Dev login</button>
+        <div class="user-menu dev-only">
+          <button type="button" class="user-btn" id="user-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="user-popup">
+            <span class="avatar" aria-hidden="true" data-user-initials></span>
+            <span class="uname" data-user-name></span>
+            <svg class="chev" data-icon="ChevDown" data-size="14"></svg>
+          </button>
+          <div class="menu user-popup" id="user-popup" role="menu" aria-label="User menu" hidden>
+            <button type="button" class="menu-item" role="menuitem" id="logout"><svg data-icon="Logout"></svg>Log out</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main" id="main">
+      <div class="page">
+        <section class="content-card" aria-labelledby="library-title">
+          <div class="content-header">
+            <div>
+              <h2 id="library-title">Library</h2>
+              <p>Custom developments by client and project. Open a logbook to see its entries.</p>
+            </div>
+            <div class="header-actions dev-only">
+              <button type="button" class="btn btn-primary"><svg data-icon="Plus"></svg>New logbook</button>
+            </div>
+          </div>
+          <form class="search-block" role="search" action="search.html" method="get" id="library-search">
+            <div class="search-row">
+              <svg data-icon="Search"></svg>
+              <input type="search" name="q" placeholder="Search logbooks and entries" aria-label="Search logbooks and entries" autocomplete="off">
+            </div>
+          </form>
+          <p class="result-count" id="library-count"></p>
+          <div class="table-wrap">
+            <table>
+              <caption class="sr-only">Logbooks</caption>
+              <thead>
+                <tr>
+                  <th scope="col" aria-sort="none"><button type="button" data-sort="name">Logbook</button></th>
+                  <th scope="col" aria-sort="none"><button type="button" data-sort="entries">Entries</button></th>
+                  <th scope="col">Tags in use</th>
+                  <th scope="col" aria-sort="descending"><button type="button" data-sort="updated" class="sorted">Last updated</button></th>
+                  <th scope="col" class="dev-only"><span class="sr-only">Actions</span></th>
+                </tr>
+              </thead>
+              <tbody id="library-rows"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="js/icons.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/behaviors.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/library.js"></script>
+</body>
+</html>

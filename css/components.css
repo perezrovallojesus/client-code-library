@@ -300,6 +300,7 @@ thead th button {
 thead th button svg { width: 12px; height: 12px; opacity: 0.5; }
 thead th button.sorted { color: var(--color-text); }
 thead th button.sorted svg { opacity: 1; color: var(--color-primary); }
+thead th button.sorted.asc svg { transform: rotate(180deg); }
 tbody tr { border-bottom: 1px solid var(--color-border-light); cursor: pointer; }
 tbody tr:last-child { border-bottom: none; }
 tbody tr:hover { background: var(--color-row-hover); }
@@ -369,7 +370,7 @@ td.col-actions { width: 1%; white-space: nowrap; }
 
 .section { margin-bottom: 22px; }
 .section:last-child { margin-bottom: 0; }
-.section h4 {
+.section-title {
   margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -605,7 +606,7 @@ pre.code-body {
   background: var(--color-bg-subtle); color: var(--color-text-muted);
 }
 .empty-state .es-icon svg { width: 22px; height: 22px; }
-.empty-state h4 { margin: 0 0 6px; font-size: 15px; font-weight: 600; color: var(--color-text); }
+.empty-state .es-title { margin: 0 0 6px; font-size: 15px; font-weight: 600; color: var(--color-text); }
 .empty-state p { max-width: 46ch; margin: 0 auto 16px; font-size: 13.5px; line-height: 1.55; color: var(--color-text-muted); }
 .empty-state .es-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .empty-state .btn { text-decoration: none; }
