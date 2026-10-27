@@ -24,27 +24,29 @@
           <span class="brand-org">Shocklogic</span>
         </span>
       </a>
-      <div class="topbar-actions">
-        <span class="dev-badge dev-only">Dev mode</span>
-        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme">
-          <svg class="icon-sun" data-icon="Sun" data-size="18"></svg>
-          <svg class="icon-moon" data-icon="Moon" data-size="18"></svg>
-        </button>
-        <button type="button" class="dev-login viewer-only" id="dev-login"><svg data-icon="Lock" data-size="15"></svg>Dev login</button>
-        <div class="user-menu dev-only">
-          <button type="button" class="user-btn" id="user-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="user-popup">
-            <span class="avatar" aria-hidden="true" data-user-initials></span>
-            <span class="uname" data-user-name></span>
-            <svg class="chev" data-icon="ChevDown" data-size="14"></svg>
-          </button>
-          <div class="menu user-popup" id="user-popup" role="menu" aria-label="User menu" hidden>
-            <button type="button" class="menu-item" role="menuitem" id="logout"><svg data-icon="Logout"></svg>Log out</button>
-          </div>
-        </div>
-      </div>
     </header>
     <main class="main" id="main">
       <div class="page">
+        <div class="utility-row">
+          <div class="utility-actions">
+            <span class="dev-badge dev-only">Dev mode</span>
+            <button type="button" class="dev-login viewer-only" id="dev-login"><svg data-icon="Lock" data-size="15"></svg>Dev login</button>
+            <div class="user-menu dev-only">
+              <button type="button" class="user-btn" id="user-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="user-popup">
+                <span class="avatar" aria-hidden="true" data-user-initials></span>
+                <span class="uname" data-user-name></span>
+                <svg class="chev" data-icon="ChevDown" data-size="14"></svg>
+              </button>
+              <div class="menu user-popup" id="user-popup" role="menu" aria-label="User menu" hidden>
+                <button type="button" class="menu-item" role="menuitem" id="logout"><svg data-icon="Logout"></svg>Log out</button>
+              </div>
+            </div>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme">
+              <svg class="icon-sun" data-icon="Sun" data-size="18"></svg>
+              <svg class="icon-moon" data-icon="Moon" data-size="18"></svg>
+            </button>
+          </div>
+        </div>
         <section class="content-card" aria-labelledby="library-title">
           <div class="content-header">
             <div>

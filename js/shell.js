@@ -1,5 +1,5 @@
 /*
-  Top bar behaviour, shared by every page: icons, theme toggle, role switch, user menu.
+  Utility row behaviour, shared by every page: icons, theme toggle, role switch, user menu.
 */
 (function () {
   'use strict';

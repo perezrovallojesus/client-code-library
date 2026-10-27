@@ -27,7 +27,6 @@
 .brand-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.25; }
 .brand-name { font-size: 16px; font-weight: 700; color: var(--color-text); white-space: nowrap; }
 .brand-org { font-size: 12px; font-weight: 500; color: var(--color-text-muted); }
-.topbar-actions { display: flex; align-items: center; gap: 8px; }
 
 .theme-toggle {
   width: 36px; height: 36px; border-radius: var(--radius-full);
@@ -81,8 +80,12 @@
 .avatar.sm { width: 22px; height: 22px; font-size: 10px; }
 .avatar.teal { background: var(--tag-teal-bg); color: var(--tag-teal-fg); }
 
+/* ---------- Utility row ---------- */
+.utility-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 36px; margin-bottom: 12px; }
+.utility-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+
 /* ---------- Breadcrumbs ---------- */
-.breadcrumbs { display: flex; align-items: center; gap: 6px; margin-bottom: 14px; font-size: 13px; color: var(--color-text-muted); }
+.breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--color-text-muted); }
 .breadcrumbs a { color: var(--color-primary); font-weight: 500; text-decoration: none; }
 .breadcrumbs a:hover { text-decoration: underline; }
 .breadcrumbs svg { width: 14px; height: 14px; }

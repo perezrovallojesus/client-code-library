@@ -21,7 +21,7 @@ A working interface skeleton in plain HTML, CSS and JavaScript, with sample data
 - No real login: Dev login and Log out only switch the role stored in the browser.
 - Not implemented: page loading and error states, loading more results, saving and deleting
   in progress, save and delete errors, and image load errors.
-- New logbook, Rename logbook and Delete logbook have no action.
+- Rename logbook and Delete logbook have no action.
 - Images are placeholders; uploads are validated but not stored.
 - Desktop only; there is no mobile or touch layout.
 - Google Fonts are loaded from the network.
